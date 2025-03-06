@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >=0.8.0 <0.9.0;
+pragma solidity >=0.8.0 ;
 
 // Useful for debugging. Remove when deploying to a live network.
 import "forge-std/console.sol";
@@ -71,6 +71,11 @@ contract YourContract {
         (bool success,) = owner.call{ value: address(this).balance }("");
         require(success, "Failed to send Ether");
     }
+
+    function additionSum(uint256 a, uint256 b) public pure returns (uint256) {
+        return a + b;
+    }
+   
 
     /**
      * Function that allows the contract to receive ETH
