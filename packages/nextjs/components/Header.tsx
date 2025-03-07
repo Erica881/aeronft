@@ -22,7 +22,7 @@ export const menuLinks: HeaderMenuLink[] = [
   },
 
   {
-    label: "Generate NFTs",
+    label: "AeroNFT Creation",
     href: "/generateNFT",
     icon: <BugAntIcon className="h-4 w-4" />,
   },

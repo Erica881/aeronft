@@ -9,7 +9,6 @@ const Page: NextPage = () => {
     <div className="text-center mt-8 bg-secondary p-10">
       <h1 className="text-4xl my-0">Generate Collections</h1>
       <InputComponent />
-      <p>Contract deployed to: </p>
     </div>
   );
 };
