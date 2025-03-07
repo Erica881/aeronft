@@ -5,6 +5,7 @@
   <a href="https://scaffoldeth.io">Website</a>
 </h4>
 
+<h5> Contract address: 0x866269DCF41698361eEec2614F77f33135653652</h5>
 🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
 ⚙️ Built using NextJS, RainbowKit, Foundry, Wagmi, Viem, and Typescript.
@@ -65,7 +66,6 @@ Run smart contract test with `yarn foundry:test`
 - Edit your smart contracts in `packages/foundry/contracts`
 - Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
 - Edit your deployment scripts in `packages/foundry/script`
-
 
 ## Documentation
 
