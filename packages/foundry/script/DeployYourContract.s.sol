@@ -27,9 +27,10 @@ contract DeployYourContract is ScaffoldETHDeploy {
      */
     function run() external ScaffoldEthDeployerRunner {
         // new AeroFactory();
-        new AeroCollection('Choco', 'CC', 'ipfs://bafybeihebhmhty45yacih4rjhcpgjlgdjrwwrcrpb2oar6hgiokww6cpdy/', msg.sender);
+        new AeroCollection('AirAsia', 'AFT', 'ipfs://bafybeigd22eugslk33dfvvmhxc5tumo7y6ial6vlfedswam7k7qakpow3u/');
 
-        //         string memory name, 
+        // 'ipfs://bafybeihebhmhty45yacih4rjhcpgjlgdjrwwrcrpb2oar6hgiokww6cpdy/'
+        // string memory name, 
         // string memory symbol, 
         // string memory baseURI, 
         // address creator

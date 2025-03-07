@@ -27,7 +27,7 @@ contract AeroFactory {
         string memory _symbol, 
         string memory _baseURI
     ) public {
-        AeroCollection newCollection = new AeroCollection(_name, _symbol, _baseURI, msg.sender);
+        AeroCollection newCollection = new AeroCollection(_name, _symbol, _baseURI);
         collections.push(CollectionInfo({
             collectionAddress: address(newCollection),
             name: _name,

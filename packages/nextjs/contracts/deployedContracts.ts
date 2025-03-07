@@ -154,7 +154,7 @@ const deployedContracts = {
       deploymentScript: "Deploy.s.sol",
     },
     AeroCollection: {
-      address: "0xf51d82f30f37c7ed9be4637f0d27e71ff87379c7",
+      address: "0x866269dcf41698361eeec2614f77f33135653652",
       abi: [
         {
           type: "constructor",
@@ -173,11 +173,6 @@ const deployedContracts = {
               name: "baseURI",
               type: "string",
               internalType: "string",
-            },
-            {
-              name: "creator",
-              type: "address",
-              internalType: "address",
             },
           ],
           stateMutability: "nonpayable",
@@ -295,19 +290,6 @@ const deployedContracts = {
         },
         {
           type: "function",
-          name: "owner",
-          inputs: [],
-          outputs: [
-            {
-              name: "",
-              type: "address",
-              internalType: "address",
-            },
-          ],
-          stateMutability: "view",
-        },
-        {
-          type: "function",
           name: "ownerOf",
           inputs: [
             {
@@ -324,13 +306,6 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
-        },
-        {
-          type: "function",
-          name: "renounceOwnership",
-          inputs: [],
-          outputs: [],
-          stateMutability: "nonpayable",
         },
         {
           type: "function",
@@ -476,19 +451,6 @@ const deployedContracts = {
           stateMutability: "nonpayable",
         },
         {
-          type: "function",
-          name: "transferOwnership",
-          inputs: [
-            {
-              name: "newOwner",
-              type: "address",
-              internalType: "address",
-            },
-          ],
-          outputs: [],
-          stateMutability: "nonpayable",
-        },
-        {
           type: "event",
           name: "Approval",
           inputs: [
@@ -591,25 +553,6 @@ const deployedContracts = {
               type: "string",
               indexed: false,
               internalType: "string",
-            },
-          ],
-          anonymous: false,
-        },
-        {
-          type: "event",
-          name: "OwnershipTransferred",
-          inputs: [
-            {
-              name: "previousOwner",
-              type: "address",
-              indexed: true,
-              internalType: "address",
-            },
-            {
-              name: "newOwner",
-              type: "address",
-              indexed: true,
-              internalType: "address",
             },
           ],
           anonymous: false,
@@ -742,31 +685,9 @@ const deployedContracts = {
             },
           ],
         },
-        {
-          type: "error",
-          name: "OwnableInvalidOwner",
-          inputs: [
-            {
-              name: "owner",
-              type: "address",
-              internalType: "address",
-            },
-          ],
-        },
-        {
-          type: "error",
-          name: "OwnableUnauthorizedAccount",
-          inputs: [
-            {
-              name: "account",
-              type: "address",
-              internalType: "address",
-            },
-          ],
-        },
       ],
       inheritedFunctions: {},
-      deploymentFile: "run-1741344521.json",
+      deploymentFile: "run-1741359957.json",
       deploymentScript: "Deploy.s.sol",
     },
   },

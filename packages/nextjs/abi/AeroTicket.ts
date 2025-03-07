@@ -4,7 +4,6 @@ export const abiAeroTicket = [
       { internalType: "string", name: "name", type: "string" },
       { internalType: "string", name: "symbol", type: "string" },
       { internalType: "string", name: "baseURI", type: "string" },
-      { internalType: "address", name: "creator", type: "address" },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
@@ -52,12 +51,6 @@ export const abiAeroTicket = [
     name: "ERC721NonexistentToken",
     type: "error",
   },
-  { inputs: [{ internalType: "address", name: "owner", type: "address" }], name: "OwnableInvalidOwner", type: "error" },
-  {
-    inputs: [{ internalType: "address", name: "account", type: "address" }],
-    name: "OwnableUnauthorizedAccount",
-    type: "error",
-  },
   {
     anonymous: false,
     inputs: [
@@ -101,15 +94,6 @@ export const abiAeroTicket = [
       { indexed: false, internalType: "string", name: "metadataCID", type: "string" },
     ],
     name: "NFTMinted",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, internalType: "address", name: "previousOwner", type: "address" },
-      { indexed: true, internalType: "address", name: "newOwner", type: "address" },
-    ],
-    name: "OwnershipTransferred",
     type: "event",
   },
   {
@@ -174,20 +158,12 @@ export const abiAeroTicket = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "owner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
     name: "ownerOf",
     outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
-  { inputs: [], name: "renounceOwnership", outputs: [], stateMutability: "nonpayable", type: "function" },
   {
     inputs: [
       { internalType: "address", name: "from", type: "address" },
@@ -249,13 +225,6 @@ export const abiAeroTicket = [
       { internalType: "uint256", name: "tokenId", type: "uint256" },
     ],
     name: "transferFrom",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
-    name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

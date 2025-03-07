@@ -13,25 +13,26 @@ const Home: NextPage = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const mintNFT = () => {
+  const handleMint = () => {
     if (!connectedAddress) return alert("Please connect your wallet first!");
 
     try {
-      setLoading(true);
+      // setLoading(true);
       writeContract({
         abi: abiAeroTicket,
-        address: "0xF51D82f30F37c7ED9Be4637F0D27e71Ff87379c7",
+        address: "0x866269DCF41698361eEec2614F77f33135653652",
         functionName: "mintNFT",
-        args: [connectedAddress, "1"],
+        args: [connectedAddress, "sundate"],
       });
-
-      alert("Ticket NFT Minted Successfully!");
+      console.log("Ticket NFT Minted Successfully!");
+      // alert("Ticket NFT Minted Successfully!");
     } catch (error) {
       console.error("Minting failed:", error);
       alert("Failed to mint NFT");
-    } finally {
-      setLoading(false);
     }
+    // finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
@@ -43,8 +44,7 @@ const Home: NextPage = () => {
         <div className="mt-4 flex justify-end items-center w-full">
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-            onClick={mintNFT}
-            disabled={loading}
+            onClick={handleMint}
           >
             {loading ? "Booking..." : "Book Ticket"}
           </button>

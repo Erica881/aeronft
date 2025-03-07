@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { aeroFactoryAbi } from "../../../abi/AeroFactory";
-import { useWriteContract } from "wagmi";
+// import { base } from "viem/chains";
+import { useWatchContractEvent, useWriteContract } from "wagmi";
 import { InputBase } from "~~/components/scaffold-eth";
 
 export default function InputComponent() {
@@ -20,7 +21,7 @@ export default function InputComponent() {
       abi: aeroFactoryAbi,
       address: "0xcE5e53c5D48D89ca9168D0C00227b3C5167f737d",
       functionName: "createNFTCollection",
-      args: [uri, symbol, name],
+      args: [name, symbol, uri],
     });
   };
 
@@ -33,24 +34,12 @@ export default function InputComponent() {
       <label htmlFor="collectionSymbol" className="font-bold mb-1">
         Symbol:
       </label>
-      <InputBase
-        // id="collectionSymbol"
-        name="collectionSymbol"
-        placeholder="_symbol"
-        value={symbol}
-        onChange={setSymbol}
-      />
+      <InputBase name="collectionSymbol" placeholder="_symbol" value={symbol} onChange={setSymbol} />
 
       <label htmlFor="baseURI" className="font-bold mb-1">
         Base URI:
       </label>
-      <InputBase
-        // id="baseURI"
-        name="baseURI"
-        placeholder="baseURI"
-        value={uri}
-        onChange={setUri}
-      />
+      <InputBase name="baseURI" placeholder="baseURI" value={uri} onChange={setUri} />
 
       <button
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out"
