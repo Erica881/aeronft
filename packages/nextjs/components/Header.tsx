@@ -22,8 +22,8 @@ export const menuLinks: HeaderMenuLink[] = [
   },
 
   {
-    label: "Debug Contracts",
-    href: "/debug",
+    label: "Generate NFTs",
+    href: "/generateNFT",
     icon: <BugAntIcon className="h-4 w-4" />,
   },
 ];
