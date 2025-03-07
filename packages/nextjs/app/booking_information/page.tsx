@@ -85,17 +85,10 @@ export default function FlightBooking() {
         </div>
       </div>
 
-      {/* Fare Summary */}
-      <div className="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-white">
-        <h2 className="text-xl font-bold mb-4">Fare Summary</h2>
-        <p>Basic Fare: RM 1634.22</p>
-        <p>Taxes, Fees & Surcharges: RM 365.73</p>
-        <p>Add-ons: RM 0.00</p>
-        <p className="font-bold">Total Amount: RM 1999.95</p>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full" onClick={handleBooking}>
+      <button className="bg-blue-600 text-white flex justify-center justify-self-center px-4 py-2 rounded mb-12 w-4/5" onClick={handleBooking}>
           Proceed to Payment
-        </button>
-      </div>
+      </button>
+
     </div>
   );
 }

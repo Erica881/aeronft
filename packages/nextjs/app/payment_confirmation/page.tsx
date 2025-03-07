@@ -16,21 +16,30 @@ const PaymentConfirmation = () => {
       </div>
 
       {/* Flight Details */}
-      <div className="bg-gray-700 p-6 rounded-lg mt-6 w-2/3">
-        <div className="flex justify-between text-white font-semibold">
-          <div>
-            <h2 className="text-lg">Depart</h2>
-            <p>🛫 MH88, MH61 - 09 Jan 2025 (Thursday)</p>
-            <p>08:00 - PEN Penang International Airport</p>
-            <p className="text-sm">Transfer in Kuala Lumpur - 6h 15m</p>
-            <p>22:30 - HND Tokyo Haneda International Airport T2</p>
+      <div className="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-white">
+        <h2 className="text-xl font-bold mb-4">Flight Details</h2>
+        <div className="flex justify-stretch border p-4 rounded-md">
+          
+          {/* Departure Flight */}
+          <div className="mb-4">
+            <h3 className="font-bold text-lg mb-2">Depart (10 March, 2025)</h3>
+            <div className="flex items-center gap-2">
+              <img src="/images/airasia.png" alt="Airline Logo" width={40} height={40} />
+              <p><strong>Airasia</strong> (AK88)</p>
+            </div>
+            <p><strong>Departure:</strong> 08:00 AM (PEN Penang International Airport)</p>
+            <p><strong>Arrival:</strong> 10:30 PM (HND Tokyo Haneda Airport T2)</p>
           </div>
+
+          {/* Return Flight */}
           <div>
-            <h2 className="text-lg">Return</h2>
-            <p>🛬 MH70, MH89 - 15 Jan 2025 (Wednesday)</p>
-            <p>08:00 - HND Tokyo Haneda International Airport T2</p>
-            <p className="text-sm">Transfer in Kuala Lumpur - 6h 15m</p>
-            <p>22:30 - PEN Penang International Airport</p>
+            <h3 className="font-bold text-lg mb-2">Return (15 March, 2025)</h3>
+            <div className="flex items-center gap-2">
+              <img src="/images/japan-airlines.png" alt="Airline Logo" width={40} height={40} />
+              <p><strong>Japan Airlines</strong> (JL89)</p>
+            </div>
+            <p><strong>Departure:</strong> 08:00 AM (HND Tokyo Haneda Airport T2)</p>
+            <p><strong>Arrival:</strong> 10:30 PM (PEN Penang International Airport)</p>
           </div>
         </div>
       </div>

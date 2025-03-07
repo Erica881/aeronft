@@ -15,11 +15,11 @@ const Home: NextPage = () => {
 
 return (
   <div className="flex flex-col items-center">
-    <div className="justify-center w-4/5 h-fit bg-white my-6 p-4 rounded-lg">
+    <div className="justify-center w-4/5 h-fit bg-gray-700 my-6 p-4 rounded-lg">
         <div className="flex space-x-4">
-            <label className="text-slate-950"><input type="radio" name="trip" defaultChecked /> Round Trip</label>
-            <label className="text-slate-950"><input type="radio" name="trip" /> One-Way</label>
-            <label className="text-slate-950"><input type="radio" name="trip" /> Multi-City</label>
+            <label className="text-white"><input type="radio" name="trip" defaultChecked /> Round Trip</label>
+            <label className="text-white"><input type="radio" name="trip" /> One-Way</label>
+            <label className="text-white"><input type="radio" name="trip" /> Multi-City</label>
         </div>
         <div className="flex items-center w-full justify-between">
             <select className="p-2 border rounded w-1/4">

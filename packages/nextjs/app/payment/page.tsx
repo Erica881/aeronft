@@ -13,39 +13,45 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className=" min-h-screen flex flex-col items-center">
+    <div className=" min-h-screen px-60 pt-6 flex flex-col items-center">
 
-      <div className="w-full max-w-5xl flex mt-6 relative">
-        {/* Flight Details Section */}
-        <div className="w-2/3 p-4">
-          <div className="bg-gray-700 p-6 shadow-lg rounded-lg mb-6">
-            <h2 className="text-lg font-semibold mb-2">Flight Details</h2>
-            <div className="text-sm text-white">
-              <p><strong>Depart:</strong> MH848, MH61 | 09 Jan 2025 (Thursday)</p>
-              <p>08:00 - PEN Penang International Airport</p>
-              <p>22:30 - HND Tokyo Haneda International Airport T2</p>
-              <p><strong>Return:</strong> MH70, MH809 | 15 Jan 2025 (Wednesday)</p>
-              <p>08:00 - HND Tokyo Haneda International Airport T2</p>
-              <p>22:30 - PEN Penang International Airport</p>
+      <div className="w-full">
+      {/* Flight Details */}
+      <div className="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-white">
+        <h2 className="text-xl font-bold mb-4">Flight Details</h2>
+        <div className="flex justify-stretch border p-4 rounded-md">
+          
+          {/* Departure Flight */}
+          <div className="mb-4">
+            <h3 className="font-bold text-lg mb-2">Depart (10 March, 2025)</h3>
+            <div className="flex items-center gap-2">
+              <img src="/images/airasia.png" alt="Airline Logo" width={40} height={40} />
+              <p><strong>Airasia</strong> (AK88)</p>
             </div>
+            <p><strong>Departure:</strong> 08:00 AM (PEN Penang International Airport)</p>
+            <p><strong>Arrival:</strong> 10:30 PM (HND Tokyo Haneda Airport T2)</p>
           </div>
 
-          {/* Payment Method Section */}
-
-
+          {/* Return Flight */}
+          <div>
+            <h3 className="font-bold text-lg mb-2">Return (15 March, 2025)</h3>
+            <div className="flex items-center gap-2">
+              <img src="/images/japan-airlines.png" alt="Airline Logo" width={40} height={40} />
+              <p><strong>Japan Airlines</strong> (JL89)</p>
+            </div>
+            <p><strong>Departure:</strong> 08:00 AM (HND Tokyo Haneda Airport T2)</p>
+            <p><strong>Arrival:</strong> 10:30 PM (PEN Penang International Airport)</p>
+          </div>
         </div>
+      </div>
 
-        {/* Sticky Fare Summary */}
-        <div className="w-1/3 p-4">
-          <div className="bg-gray-700 p-6 shadow-lg rounded-lg  top-6">
-            <h2 className="text-lg font-semibold mb-4">Fare Summary</h2>
-            <p className="text-sm text-white flex justify-between"><span>Basic Fare</span> <span>RM 1634.22</span></p>
-            <p className="text-sm text-white flex justify-between"><span>Taxes, fees & surcharges</span> <span>RM 365.73</span></p>
-            <p className="text-sm text-white flex justify-between"><span>Add-ons</span> <span>RM 0.00</span></p>
-            <hr className="my-2" />
-            <p className="text-lg font-bold flex justify-between"><span>Total Amount</span> <span>RM 1999.95</span></p>
-
-          </div>
+        {/* Fare Summary */}
+        <div className="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-white">
+          <h2 className="text-xl font-bold mb-4">Fare Summary</h2>
+          <p>Basic Fare: RM 1634.22</p>
+          <p>Taxes, Fees & Surcharges: RM 365.73</p>
+          <p>Add-ons: RM 0.00</p>
+          <p className="font-bold">Total Amount: RM 1999.95</p>
         </div>
       </div>
 
