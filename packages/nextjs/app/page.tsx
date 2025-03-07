@@ -1,45 +1,52 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
-import { useRouter } from "next/navigation";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
   const router = useRouter();
-
   const handleSearch = () => {
     // Redirect to the searchResult page
-    router.push('/depature_flight_result');
+    router.push("/depature_flight_result");
   };
 
-return (
-  <div className="flex flex-col items-center">
-    <div className="justify-center w-4/5 h-fit bg-gray-700 my-6 p-4 rounded-lg">
+  return (
+    <div className="flex flex-col items-center">
+      <div className="justify-center w-4/5 h-fit bg-gray-700 my-6 p-4 rounded-lg">
         <div className="flex space-x-4">
-            <label className="text-white"><input type="radio" name="trip" defaultChecked /> Round Trip</label>
-            <label className="text-white"><input type="radio" name="trip" /> One-Way</label>
-            <label className="text-white"><input type="radio" name="trip" /> Multi-City</label>
+          <label className="text-white">
+            <input type="radio" name="trip" defaultChecked /> Round Trip
+          </label>
+          <label className="text-white">
+            <input type="radio" name="trip" /> One-Way
+          </label>
+          <label className="text-white">
+            <input type="radio" name="trip" /> Multi-City
+          </label>
         </div>
         <div className="flex items-center w-full justify-between">
-            <select className="p-2 border rounded w-1/4">
-              <option >Penang International Airport (PEN)</option>
-            </select>
-            <button className="border px-2 py-1 rounded bg-slate-500">⇆</button>
-            <select className="p-2 border rounded w-1/4">
-              <option >Tokyo Haneda Airport (HND)</option>
-            </select>
-            <input type="date" className="p-2 border rounded w-fit" />
-            <input type="date" className="p-2 border rounded w-fit" />
-            <select className="p-2 border rounded w-1/5">
-              <option>1 Adult, Economy</option>
-              <option>2 Adult, Economy</option>
-            </select>
-          </div>
-          <button className="flex bg-blue-500 text-white px-4 py-2 mt-2 rounded justify-self-end" onClick={handleSearch}>Search</button>
+          <select className="p-2 border rounded w-1/4">
+            <option>Penang International Airport (PEN)</option>
+          </select>
+          <button className="border px-2 py-1 rounded bg-slate-500">⇆</button>
+          <select className="p-2 border rounded w-1/4">
+            <option>Tokyo Haneda Airport (HND)</option>
+          </select>
+          <input type="date" className="p-2 border rounded w-fit" />
+          <input type="date" className="p-2 border rounded w-fit" />
+          <select className="p-2 border rounded w-1/5">
+            <option>1 Adult, Economy</option>
+            <option>2 Adult, Economy</option>
+          </select>
+        </div>
+        <button className="flex bg-blue-500 text-white px-4 py-2 mt-2 rounded justify-self-end" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Home;
