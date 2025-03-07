@@ -1,9 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function PaymentPage() {
   const [selectedMethod, setSelectedMethod] = useState('Credit/Debit Card');
+
+  const router = useRouter();
+
+  const handlePayment = () => {
+    router.push('/booking_confirmation');
+  };
 
   return (
     <div className=" min-h-screen flex flex-col items-center">
@@ -57,7 +64,7 @@ export default function PaymentPage() {
 
       {/* Confirm Payment Button */}
       <div className="w-full max-w-5xl mt-6">
-        <button className="w-full bg-blue-500 text-white py-3 rounded-lg text-lg font-bold">Confirm Payment</button>
+        <button className="w-full bg-blue-500 text-white py-3 rounded-lg text-lg font-bold" onClick={handlePayment}>Confirm Payment</button>
       </div>
 
  
