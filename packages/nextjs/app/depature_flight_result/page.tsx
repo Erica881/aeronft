@@ -8,16 +8,6 @@ import { BsFilter } from "react-icons/bs";
 const flights = [
   {
     id: 1,
-    airline: "Malaysia Airlines",
-    departure: "08:00",
-    arrival: "22:30",
-    duration: "14h 30m",
-    stops: "1 Stop (1h 15m at Kuala Lumpur)",
-    price: "RM1252",
-    logo: "/images/malaysia-airlines.png",
-  },
-  {
-    id: 2,
     airline: "AirAsia",
     departure: "13:15",
     arrival: "21:10",
@@ -27,17 +17,17 @@ const flights = [
     logo: "/images/airasia.png",
   },
   {
-    id: 3,
-    airline: "Singapore Airlines",
-    departure: "10:10",
-    arrival: "20:35",
-    duration: "10h 25m",
-    stops: "1 Stop (1h 30m at Singapore)",
-    price: "RM1942",
-    logo: "/images/singapore-airlines.png",
+    id: 2,
+    airline: "Malaysia Airlines",
+    departure: "08:00",
+    arrival: "22:30",
+    duration: "14h 30m",
+    stops: "1 Stop (1h 15m at Kuala Lumpur)",
+    price: "RM1252",
+    logo: "/images/malaysia-airlines.png",
   },
   {
-    id: 4,
+    id: 3,
     airline: "Japan Airlines",
     departure: "09:15",
     arrival: "17:45",
@@ -45,6 +35,16 @@ const flights = [
     stops: "Non-Stop",
     price: "RM2090",
     logo: "/images/japan-airlines.png",
+  },
+  {
+    id: 4,
+    airline: "Singapore Airlines",
+    departure: "10:10",
+    arrival: "20:35",
+    duration: "10h 25m",
+    stops: "1 Stop (1h 30m at Singapore)",
+    price: "RM1942",
+    logo: "/images/singapore-airlines.png",
   },
   {
     id: 5,
@@ -127,7 +127,7 @@ export default function SearchResultPage() {
           <h1 className="text-2xl font-bold">Departing Flight</h1>
           <div>From: Penang International Airport (PEN)</div>
           <div>To: Tokyo Haneda Airport (HND)</div>
-          <div>Date: March 10, 2025</div>
+          <div>Date: 10 March, 2025</div>
         </div>
         <div className="flex self-end items-center">
           <label className="mr-2 text-white">Sort by:</label>
@@ -148,17 +148,6 @@ export default function SearchResultPage() {
           <h2 className="font-semibold text-lg mb-2 flex items-center">
             <BsFilter className="mr-2" /> Filter by
           </h2>
-          <div>
-            <label className="block">
-              <input type="checkbox" className="mr-2" /> Direct flight only
-            </label>
-            <label className="block">
-              <input type="checkbox" className="mr-2" /> In-flight WiFi included
-            </label>
-            <label className="block">
-              <input type="checkbox" className="mr-2" /> Hide unavailable flights
-            </label>
-          </div>
 
           <h3 className="font-semibold mt-4">Stops</h3>
           <div>

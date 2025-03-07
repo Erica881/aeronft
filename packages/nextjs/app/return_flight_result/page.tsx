@@ -8,23 +8,23 @@ import { BsFilter } from "react-icons/bs";
 const flights = [
   {
     id: 1,
-    airline: "Malaysia Airlines",
-    departure: "08:00",
-    arrival: "22:30",
-    duration: "14h 30m",
-    stops: "1 Stop (1h 15m at Kuala Lumpur)",
-    price: "RM1252",
-    logo: "/images/malaysia-airlines.png",
+    airline: "AirAsia",
+    departure: "15:15",
+    arrival: "23:10",
+    duration: "07h 55m",
+    stops: "Non-Stop",
+    price: "RM1593",
+    logo: "/images/airasia.png",
   },
   {
     id: 2,
-    airline: "AirAsia",
-    departure: "13:15",
-    arrival: "21:10",
+    airline: "Japan Airlines",
+    departure: "07:15",
+    arrival: "15:45",
     duration: "07h 55m",
     stops: "Non-Stop",
-    price: "RM1552",
-    logo: "/images/airasia.png",
+    price: "RM2082",
+    logo: "/images/japan-airlines.png",
   },
   {
     id: 3,
@@ -38,13 +38,13 @@ const flights = [
   },
   {
     id: 4,
-    airline: "Japan Airlines",
-    departure: "09:15",
-    arrival: "17:45",
-    duration: "07h 55m",
-    stops: "Non-Stop",
-    price: "RM2090",
-    logo: "/images/japan-airlines.png",
+    airline: "Malaysia Airlines",
+    departure: "08:00",
+    arrival: "22:30",
+    duration: "14h 30m",
+    stops: "1 Stop (1h 15m at Kuala Lumpur)",
+    price: "RM1252",
+    logo: "/images/malaysia-airlines.png",
   },
   {
     id: 5,
@@ -148,17 +148,6 @@ export default function SearchResultPage() {
           <h2 className="font-semibold text-lg mb-2 flex items-center">
             <BsFilter className="mr-2" /> Filter by
           </h2>
-          <div>
-            <label className="block">
-              <input type="checkbox" className="mr-2" /> Direct flight only
-            </label>
-            <label className="block">
-              <input type="checkbox" className="mr-2" /> In-flight WiFi included
-            </label>
-            <label className="block">
-              <input type="checkbox" className="mr-2" /> Hide unavailable flights
-            </label>
-          </div>
 
           <h3 className="font-semibold mt-4">Stops</h3>
           <div>

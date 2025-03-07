@@ -20,6 +20,10 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "Home",
     href: "/",
   },
+  {
+    label: "My Tickets",
+    href: "/my_tickets",
+  },
 ];
 
 const HeaderMenuLinks = () => {

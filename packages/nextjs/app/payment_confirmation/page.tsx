@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-// import { CheckCircle } from 'lucide-react';
-import Image from 'next/image';
 
 const PaymentConfirmation = () => {
   return (
@@ -19,18 +17,18 @@ const PaymentConfirmation = () => {
 
       {/* Flight Details */}
       <div className="bg-gray-700 p-6 rounded-lg mt-6 w-2/3">
-        <div className="flex justify-between text-black font-semibold">
+        <div className="flex justify-between text-white font-semibold">
           <div>
             <h2 className="text-lg">Depart</h2>
             <p>🛫 MH88, MH61 - 09 Jan 2025 (Thursday)</p>
             <p>08:00 - PEN Penang International Airport</p>
             <p className="text-sm">Transfer in Kuala Lumpur - 6h 15m</p>
-            <p>22:30 - NRT Tokyo Narita International Airport T2</p>
+            <p>22:30 - HND Tokyo Haneda International Airport T2</p>
           </div>
           <div>
             <h2 className="text-lg">Return</h2>
             <p>🛬 MH70, MH89 - 15 Jan 2025 (Wednesday)</p>
-            <p>08:00 - NRT Tokyo Narita International Airport T2</p>
+            <p>08:00 - HND Tokyo Haneda International Airport T2</p>
             <p className="text-sm">Transfer in Kuala Lumpur - 6h 15m</p>
             <p>22:30 - PEN Penang International Airport</p>
           </div>

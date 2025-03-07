@@ -9,7 +9,7 @@ export default function PaymentPage() {
   const router = useRouter();
 
   const handlePayment = () => {
-    router.push('/booking_confirmation');
+    router.push('/payment_confirmation');
   };
 
   return (
@@ -23,29 +23,16 @@ export default function PaymentPage() {
             <div className="text-sm text-white">
               <p><strong>Depart:</strong> MH848, MH61 | 09 Jan 2025 (Thursday)</p>
               <p>08:00 - PEN Penang International Airport</p>
-              <p>22:30 - NRT Tokyo Narita International Airport T2</p>
+              <p>22:30 - HND Tokyo Haneda International Airport T2</p>
               <p><strong>Return:</strong> MH70, MH809 | 15 Jan 2025 (Wednesday)</p>
-              <p>08:00 - NRT Tokyo Narita International Airport T2</p>
+              <p>08:00 - HND Tokyo Haneda International Airport T2</p>
               <p>22:30 - PEN Penang International Airport</p>
             </div>
           </div>
 
           {/* Payment Method Section */}
-          <div className="bg-gray-700 p-6 shadow-lg rounded-lg">
-            <h2 className="text-lg font-semibold mb-4">Select a Payment Method</h2>
-            <div className="text-black grid grid-cols-6 gap-2 mb-4">
-              {['MetaMask', 'FPX', 'Credit/Debit Card', 'PayPal'].map((method) => (
-                <button
-                  key={method}
-                  onClick={() => setSelectedMethod(method)}
-                  className={`p-2 border rounded-lg text-sm ${selectedMethod === method ? 'bg-blue-500 text-white' : 'bg-gray-100'}`}
-                >
-                  {method}
-                </button>
-              ))}
-            </div>
 
-          </div>
+
         </div>
 
         {/* Sticky Fare Summary */}
