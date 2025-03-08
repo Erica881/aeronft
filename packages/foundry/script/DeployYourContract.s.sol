@@ -2,7 +2,8 @@
 pragma solidity ^0.8.19;
 
 import "./DeployHelpers.s.sol";
-import "../contracts/YourContract.sol";
+import "../contracts/AeroFactory.sol";
+import "../contracts/AeroCollection.sol";
 
 /**
  * @notice Deploy script for YourContract contract
@@ -25,6 +26,13 @@ contract DeployYourContract is ScaffoldETHDeploy {
      *      - Export contract addresses & ABIs to `nextjs` packages
      */
     function run() external ScaffoldEthDeployerRunner {
-        new YourContract(deployer);
+        // new AeroFactory();
+        new AeroCollection('AirAsia', 'AFT', 'ipfs://bafybeigd22eugslk33dfvvmhxc5tumo7y6ial6vlfedswam7k7qakpow3u/');
+
+        // 'ipfs://bafybeihebhmhty45yacih4rjhcpgjlgdjrwwrcrpb2oar6hgiokww6cpdy/'
+        // string memory name, 
+        // string memory symbol, 
+        // string memory baseURI, 
+        // address creator
     }
 }

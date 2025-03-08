@@ -1,71 +1,121 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
+import Image from "next/image";
+import { abiAeroTicket } from "../abi/AeroTicket";
 import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Address } from "~~/components/scaffold-eth";
+import { useAccount, useWriteContract } from "wagmi";
+
+const ticketData = [
+  {
+    date: "14th Dec 2024",
+    from: "KUL",
+    to: "Penang",
+    flightNumber: "AK1234",
+    departureTime: "10:30 AM",
+    arrivalTime: "11:45 AM",
+    gate: "A12",
+    seat: "12C",
+    terminal: "T1",
+    airline: "AirAsia",
+    duration: "1h 15m",
+    destinationCode: "sundate",
+  },
+  {
+    date: "25th Dec 2024",
+    from: "KUL",
+    to: "China",
+    flightNumber: "MH5678",
+    departureTime: "2:00 PM",
+    arrivalTime: "8:30 PM",
+    gate: "B5",
+    seat: "22A",
+    terminal: "T2",
+    airline: "Malaysia Airlines",
+    duration: "6h 30m",
+    destinationCode: "china",
+  },
+];
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
+  const { writeContract } = useWriteContract();
+  const [loading, setLoading] = useState(false);
 
+  const handleMint = (destination: string) => {
+    if (!connectedAddress) return alert("Please connect your wallet first!");
+    try {
+      setLoading(true);
+      writeContract({
+        abi: abiAeroTicket,
+        address: "0x866269DCF41698361eEec2614F77f33135653652",
+        functionName: "mintNFT",
+        args: [connectedAddress, destination],
+      });
+    } catch (error) {
+      console.error("Minting failed:", error);
+      alert("Failed to mint NFT");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
-    <>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="px-5">
-          <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
-          </h1>
-          <div className="flex justify-center items-center space-x-2 flex-col sm:flex-row">
-            <p className="my-2 font-medium">Connected Address:</p>
-            <Address address={connectedAddress} />
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
+      {ticketData.map((ticket, index) => (
+        <div
+          key={index}
+          className="bg-gray-700 text-white shadow-lg rounded-lg p-4 w-[600px] flex flex-row items-center m-4"
+        >
+          {/* Airline Logo */}
+          <div className="flex items-center justify-center w-24">
+            <Image
+              src={`/images/${ticket.airline.toLowerCase().replace(/ /g, "-")}.png`}
+              alt="Airline Logo"
+              width={50}
+              height={50}
+            />
           </div>
 
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/app/page.tsx
-            </code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
-          </p>
-        </div>
-
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contracts
-                </Link>{" "}
-                tab.
+          {/* Flight Details */}
+          <div className="flex-1 grid grid-cols-2 gap-2 px-4">
+            <div>
+              <h3 className="font-bold text-lg">{ticket.airline}</h3>
+              <p className="text-sm">{ticket.flightNumber}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-sm">
+                Trip Date: <span className="font-bold">{ticket.date}</span>
               </p>
             </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
+            <div>
               <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
+                <strong>Departure:</strong> {ticket.departureTime} {ticket.from} T{ticket.terminal}
+              </p>
+              <p>
+                <strong>Arrival:</strong> {ticket.arrivalTime} {ticket.to}
+              </p>
+            </div>
+            <div className="text-right">
+              <p>
+                <strong>Gate:</strong> {ticket.gate} | <strong>Seat:</strong> {ticket.seat}
+              </p>
+              <p>
+                <strong>Duration:</strong> {ticket.duration}
               </p>
             </div>
           </div>
+
+          {/* Book Button */}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            onClick={() => handleMint(ticket.destinationCode)}
+            // disabled={loading}
+          >
+            {loading ? "Booking..." : "Book Ticket"}
+          </button>
         </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
 };
 
