@@ -4,8 +4,8 @@
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
   <a href="https://scaffoldeth.io">Website</a>
 </h4>
-
-<h5> Contract address: 0x866269DCF41698361eEec2614F77f33135653652</h5>
+<h5> Network: <a href="https://sepolia.scrollscan.com/">Scroll Sepolia Testnet</a></h5>
+<h5> Contract address: <a href="https://sepolia.scrollscan.com/address/0x866269DCF41698361eEec2614F77f33135653652">0x866269DCF41698361eEec2614F77f33135653652</a></h5>
 🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
 ⚙️ Built using NextJS, RainbowKit, Foundry, Wagmi, Viem, and Typescript.

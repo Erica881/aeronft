@@ -44,11 +44,10 @@
     "vercel": "yarn workspace @se-2/nextjs vercel",
     "vercel:login": "yarn workspace @se-2/nextjs vercel:login",
     "vercel:yolo": "yarn workspace @se-2/nextjs vercel:yolo",
-    "verify": "yarn foundry:verify",
-    "prepare": "husky install"
+    "verify": "yarn foundry:verify"
   },
   "devDependencies": {
-    "husky": "^8.0.0",
+    "husky": "~9.1.6",
     "lint-staged": "~13.2.2"
   },
   "packageManager": "yarn@3.2.3",
