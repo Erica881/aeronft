@@ -59,7 +59,6 @@ export const HeaderMenuLinks = () => {
  */
 export const Header = () => {
   const { targetNetwork } = useTargetNetwork();
-  // const isLocalNetwork = targetNetwork.id === scrollSepolia.id;
   const isFaucetAvailable = targetNetwork.id === hardhat.id || targetNetwork.id === scrollSepolia.id;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
